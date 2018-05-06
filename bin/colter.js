@@ -14,4 +14,4 @@ if (color[0] != '#')
 
 console.log("pattern: " + pattern);
 console.log("color: " + color);
-console.log(chalk_convert(ch.hex(pattern)));
+console.log(chalk_convert(ch.hex(pattern).bgHex("#000")));
