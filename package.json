@@ -1,0 +1,30 @@
+{
+  "name": "colter",
+  "version": "0.0.0",
+  "description": "set terminal color",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/non258/colter.git"
+  },
+  "keywords": [
+    "terminal",
+    "color",
+    "set"
+  ],
+  "author": "non258",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/non258/colter/issues"
+  },
+  "homepage": "https://github.com/non258/colter#readme",
+  "bin": {
+    "colter": "bin/colter.js"
+  }
+}
