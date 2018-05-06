@@ -26,5 +26,8 @@
   "homepage": "https://github.com/non258/colter#readme",
   "bin": {
     "colter": "bin/colter.js"
+  },
+  "dependencies": {
+    "argv": "0.0.2"
   }
 }

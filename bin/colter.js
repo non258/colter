@@ -1,2 +1,5 @@
 #!/usr/bin/env node
-console.log('Hello, World!');
+
+let opt = require("./options");
+
+console.log(opt.run());
