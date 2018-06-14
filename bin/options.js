@@ -2,7 +2,10 @@
 const argv = require('argv');
 const package = require('../package.json');
 
-argv.option([{
+argv.info(`Usage: colter [pattern] [color]`)
+
+argv.option([
+{
   name: 'none',
   short:'n',
   type: 'string',
@@ -16,7 +19,15 @@ argv.option([{
   type: 'string',
   description:'バージョンの表示',
   example: "'colter --version' or 'colter -v'"
-}]);
+},
+
+{
+  name: 'init',
+  type: 'bool',
+  description: '初期処理を行います',
+  example: "'colter --init' write to rcfile"
+}
+]);
 
 argv.version(package.version);
 
