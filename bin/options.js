@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-let argv = require('argv');
-let package = require('../package.json');
+const argv = require('argv');
+const package = require('../package.json');
 
 argv.option([{
   name: 'none',
