@@ -7,8 +7,13 @@ let data = opt.run();
 let pattern = data.targets[0];
 let color = data.targets[1];
 
-if (color[0] != '#')
-{
+
+if (data.options.init) {
+  console.log("init ok")
+  return
+}
+
+if (color[0] != '#') {
  color = "#" + color;
 }
 
