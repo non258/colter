@@ -1,17 +1,19 @@
 #!/usr/bin/env node
 const fs = require('fs')
 const os = require('os')
-let filename = ".colter"
+const settings = require('../settings')
 
 function mkdot()
 {
   try
   {
-    let dir = fs.readdirSync(`${os.homedir()}/${filename}`)
+    let dir = fs.readdirSync(`${os.homedir()}/${settings.rc}`)
 
   }
   catch(e)
   {
-    fs.mkdirSync(`${os.homedir()}/${filename}`)
+    fs.mkdirSync(`${os.homedir()}/${settings.rc}`)
   }
 }
+
+module.exports = mkdot
