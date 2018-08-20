@@ -8,7 +8,6 @@ function mkdot()
   try
   {
     let dir = fs.readdirSync(`${os.homedir()}/${filename}`)
-
   }
   catch(e)
   {
