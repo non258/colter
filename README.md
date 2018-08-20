@@ -13,15 +13,3 @@ $ sudo npm install -g colter
 ```bash
 $ colter [変換したい文字] [変換したい色]
 ```
-以下にコマンドのオプションを説明します。
-```bash
-オプション
-$ colter --help, -h
-    colterのhelpを表示します
-
-$ colter --init
-    colterの初回設定を行います。
-
-$ colter --version
-    colterのバージョンを確認します。
-```
