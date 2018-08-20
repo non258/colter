@@ -1,6 +1,6 @@
 const fs = require('fs');
 const os = require('os')
-let filename = ".colter"
+const settings = require('../settings')
 
 //ファイルの書き込み関数
 function writeFile(path, data) {
@@ -25,7 +25,7 @@ function mkcolor_settings() {
       }
     }
     
-    writeFile(`${os.homedir()}/${filename}/color_setting.json`, JSON.stringify(convert))
+    writeFile(`${os.homedir()}/${settings.rc}/${settings.colorrc}`, JSON.stringify(convert))
   });
 }
 
