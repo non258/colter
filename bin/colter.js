@@ -3,12 +3,14 @@
 const opt = require("./options");
 const ch = require("chalk");
 const chalk_convert = require("./utilty/convert");
+const mkdot = require("./utilty/mkdotfile")
 let data = opt.run();
 let pattern = data.targets[0];
 let color = data.targets[1];
 
 
 if (data.options.init) {
+  mkdot();
   console.log("init ok")
   return
 }
