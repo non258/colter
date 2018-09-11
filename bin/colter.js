@@ -6,6 +6,7 @@ const chalk_convert = require("./utility/convert")
 const mkdot = require("./utility/mkdotfile")
 const read_settings_json = require("./utility/read_json") 
 const convert_dircolors = require("./utility/convert_dircolors") 
+const get_dircolors_settings = require("./utility/get_dircolors_settings") 
 
 
 let data = opt.run();
