@@ -4,11 +4,9 @@ const settings = require('../settings')
 
 
 function get_dircolors_settings() {
-  console.log('get')
   try
   {
     let file = fs.readFileSync(`${os.homedir()}/${settings.rc}/${settings.colorrc}`)
-    console.log('file', file)
   }
   catch(e)
   {
