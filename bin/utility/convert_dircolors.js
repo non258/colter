@@ -29,4 +29,4 @@ function mkcolor_settings() {
   });
 }
 
-
+module.exports = mkcolor_settings
