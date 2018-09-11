@@ -14,6 +14,7 @@ function mkcolor_settings(dircolors_settings) {
       convert[tmp[0]] = tmp[1] 
     }
   }
+  return convert
 }
 
 module.exports = mkcolor_settings
