@@ -2,15 +2,6 @@ const fs = require('fs');
 const os = require('os')
 const settings = require('../settings')
 
-//ファイルの書き込み関数
-function writeFile(path, data) {
-  fs.writeFile(path, data, function (err) {
-    if (err) {
-        throw err;
-    }
-  });
-}
-
 function mkcolor_settings(dircolors_settings) {
   let convert = {}
   if (dircolors_settings.endsWith("\n")) {
