@@ -12,7 +12,7 @@ function writeFile(path, data) {
 }
 
 function save_settings(dircolors_settings_json) {
-  writeFile(`${os.homedir()}/${settings.rc}/${settings.colorrc}`, JSON.stringify(dircolors_settings_json))
+  writeFile(`${os.homedir()}/${settings.rc}/${settings.colorrc}`, dircolors_settings_json)
 }
 
 module.exports = save_settings

@@ -1,6 +1,5 @@
 function convert_JSON (dircolors_setting_json){
-  let header = (function () {/*
-TERM Eterm
+  let header = (function () {/*TERM Eterm
 TERM ansi
 TERM color-xterm
 TERM con[0-9]*x[0-9]*
@@ -37,6 +36,6 @@ TERM xterm*
   }
 
   return header
-  
+
 }
 module.exports = convert_JSON

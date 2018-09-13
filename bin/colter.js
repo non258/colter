@@ -4,9 +4,10 @@ const opt = require("./options");
 const ch = require("chalk");
 const chalk_convert = require("./utility/convert")
 const mkdot = require("./utility/mkdotfile")
-const convert_dircolors = require("./utility/convert_dircolors") 
-const get_dircolors_settings = require("./utility/get_dircolors_settings") 
-const convert_JSON = require("./utility/convert_JSON") 
+const convert_dircolors = require("./utility/convert_dircolors")
+const get_dircolors_settings = require("./utility/get_dircolors_settings")
+const convert_JSON = require("./utility/convert_JSON")
+const save_settings = require('./utility/save_settings')
 
 let data = opt.run();
 let pattern = data.targets[0];
