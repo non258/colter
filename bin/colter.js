@@ -23,11 +23,11 @@ if (data.options.init) {
 let pattern = data.targets[0];
 let color = data.targets[1];
 
-if (color && color[0] != '#') {
- color = "#" + color;
-} else {
+if (data.targets.length == 1) {
   console.log('please color');
   return
+} else if (color[0] != '#') {
+ color = "#" + color;
 }
 
 console.log("pattern: " + pattern);
