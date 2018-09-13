@@ -12,8 +12,6 @@ const convert_dircolors = require("./utility/convert_dircolors")
 const print_dircolors = require("./utility/print_dircolors")
 
 let data = opt.run();
-let pattern = data.targets[0];
-let color = data.targets[1];
 
 if (data.options.init) {
   mkdot();
@@ -22,8 +20,14 @@ if (data.options.init) {
   return
 }
 
-if (color[0] != '#') {
+let pattern = data.targets[0];
+let color = data.targets[1];
+
+if (color && color[0] != '#') {
  color = "#" + color;
+} else {
+  console.log('please color');
+  return
 }
 
 console.log("pattern: " + pattern);
