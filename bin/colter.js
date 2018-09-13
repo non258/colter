@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const argv = require('argv');
 const opt = require("./options");
 const ch = require("chalk");
 const chalk_convert = require("./utility/convert")
@@ -17,6 +18,11 @@ if (data.options.init) {
   mkdot();
   get_dircolors_settings()
   print_dircolors()
+  return
+}
+
+if (data.targets.length == 0) {
+  argv.help();
   return
 }
 
