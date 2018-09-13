@@ -30,7 +30,7 @@ console.log("pattern: " + pattern);
 console.log("color: " + color);
 // console.log(chalk_convert(ch.hex(pattern).bgHex("#000")));
 
-if (pattern[0]) {
+if (pattern) {
   let set_colors = get_dircolors_settings()
   set_colors = convert_dircolors(set_colors)
   set_colors[pattern] = chalk_convert(ch.hex(color))
