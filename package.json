@@ -1,6 +1,6 @@
 {
   "name": "colter",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "set terminal color",
   "main": "index.js",
   "directories": {
