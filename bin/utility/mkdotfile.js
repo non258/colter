@@ -3,7 +3,7 @@ const fs = require('fs')
 const os = require('os')
 const settings = require('../settings')
 
-function mkdot()
+function mkdotfile()
 {
   try
   {
@@ -15,4 +15,4 @@ function mkdot()
   }
 }
 
-module.exports = mkdot
+module.exports = mkdotfile
