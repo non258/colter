@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs')
 const os = require('os')
 const settings = require('../settings')
 
@@ -11,7 +11,7 @@ function mkcolor_settings(dircolors_settings) {
   for (let i = 0; i < colors_settings.length; i++) {
     if (colors_settings[i].trim().match(/^(#|TERM)/) == null) {
       let tmp = colors_settings[i].split(" ")
-      convert[tmp[0]] = tmp[1] 
+      convert[tmp[0]] = tmp[1]
     }
   }
   return convert
