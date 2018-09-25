@@ -5,14 +5,12 @@ const opt = require("./options");
 const ch = require("chalk");
 const chalk_convert = require("./utility/chalk_convert")
 const convert_dircolors = require("./utility/convert_dircolors")
-const convert_JSON = require("./utility/convert_JSON")
-const get_dircolors_settings = require("./utility/get_dircolors_settings")
 const mkdotfile = require("./utility/mkdotfile")
 const print_dircolors = require("./utility/print_dircolors")
 const read_json = require("./utility/read_json")
 const save_settings = require('./utility/save_settings')
 
-let data = opt.run();
+let data = opt.run()
 
 if (data.options.init) {
   mkdotfile();
@@ -22,23 +20,23 @@ if (data.options.init) {
 }
 
 if (data.targets.length == 0) {
-  argv.help();
+  argv.help()
   return
 }
 
-let pattern = data.targets[0];
-let color = data.targets[1];
+let pattern = data.targets[0]
+let color = data.targets[1]
 
 if (data.targets.length == 1) {
-  console.log('please color');
+  console.log('please color')
   return
 } else if (color[0] != '#') {
- color = "#" + color;
+ color = "#" + color
 }
 
-console.log("pattern: " + pattern);
-console.log("color: " + color);
-// console.log(chalk_convert(ch.hex(pattern).bgHex("#000")));
+console.log("pattern: " + pattern)
+console.log("color: " + color)
+// console.log(chalk_convert(ch.hex(pattern).bgHex("#000")))
 
 if (pattern) {
   let set_colors = get_dircolors_settings()
