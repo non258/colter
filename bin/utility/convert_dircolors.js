@@ -2,7 +2,7 @@ const fs = require('fs')
 const os = require('os')
 const settings = require('../settings')
 
-function mkcolor_settings(dircolors_settings) {
+function convert_dircolors(dircolors_settings) {
   let convert = {}
   if (dircolors_settings.endsWith("\n")) {
     dircolors_settings = dircolors_settings.slice(0, -1)
@@ -17,4 +17,4 @@ function mkcolor_settings(dircolors_settings) {
   return convert
 }
 
-module.exports = mkcolor_settings
+module.exports = convert_dircolors
