@@ -11,6 +11,7 @@ const reset_settings = require('./utility/reset_settings')
 const save_settings = require('./utility/save_settings')
 const get_dircolors_settings = require('./utility/get_dircolors_settings')
 const convert_JSON = require('./utility/convert_JSON')
+const confirm = require('prompt-confirm');
 
 let data = opt.run()
 
@@ -22,7 +23,13 @@ if (data.options.init) {
 }
 
 if (data.options.reset) {
-  reset_settings()
+  new confirm('reset!?')
+    .run()
+    .then((answer) => {
+      if (answer) {
+        reset_settings()
+      }
+    })
   return
 }
 
