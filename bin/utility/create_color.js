@@ -1,4 +1,4 @@
-const chalk = require("chalk")
+const chalk = require('chalk')
 function create_color (color) {
   if (color == undefined) {
     return undefined
