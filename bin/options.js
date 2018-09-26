@@ -10,6 +10,11 @@ argv.option([
   type: 'bool',
   description: '初期処理を行います',
   example: "'colter --init' write to rcfile"
+}, {
+  name: 'reset',
+  type: 'bool',
+  description: '色を初期状態に戻します',
+  example: "'colter --reset'"
 }
 ])
 

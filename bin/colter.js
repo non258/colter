@@ -10,6 +10,7 @@ const convert_JSON = require("./utility/convert_JSON")
 const save_settings = require('./utility/save_settings')
 const convert_dircolors = require("./utility/convert_dircolors")
 const print_dircolors = require("./utility/print_dircolors")
+const reset_settings = require('./utility/reset_settings')
 
 let data = opt.run()
 
@@ -17,6 +18,11 @@ if (data.options.init) {
   mkdot()
   get_dircolors_settings()
   print_dircolors()
+  return
+}
+
+if (data.options.reset) {
+  reset_settings()
   return
 }
 
