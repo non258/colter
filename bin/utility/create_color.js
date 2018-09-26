@@ -4,7 +4,7 @@ function create_color (color) {
     return undefined
   }
 
-  let rgb = color.match(/^rgb[^a-zA-Z] *(\d+)[, ] *(\d+)[, ] *(\d+) *[^a-zA-Z]?$/)
+  let rgb = color.match(/^rgb[^a-zA-Z] *(\d+)[., ] *(\d+)[., ] *(\d+) *[^a-zA-Z]?$/)
   if (rgb) {
     return chalk.rgb(rgb[1], rgb[2], rgb[3])
   }
