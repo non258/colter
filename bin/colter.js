@@ -28,6 +28,7 @@ if (data.options.reset) {
     .then((answer) => {
       if (answer) {
         reset_settings()
+        get_dircolors_settings()
       }
     })
   return
