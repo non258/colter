@@ -12,6 +12,7 @@ const create_color = require("./utility/create_color")
 const save_settings = require('./utility/save_settings')
 const get_dircolors_settings = require('./utility/get_dircolors_settings')
 const convert_JSON = require('./utility/convert_JSON')
+const ls = require('./utility/ls')
 const confirm = require('prompt-confirm');
 
 let data = opt.run()
@@ -20,6 +21,11 @@ if (data.options.init) {
   mkdotfile();
   get_dircolors_settings()
   print_dircolors()
+  return
+}
+
+if (data.options.ls) {
+  ls(data.options.ls === 'true' ? './' : data.options.ls)
   return
 }
 
@@ -47,7 +53,7 @@ let chalk = create_color(color)
 if (chalk == undefined) {
   console.log('please color')
   return
-} 
+}
 
 console.log("pattern: " + pattern)
 console.log("color: " + color)
