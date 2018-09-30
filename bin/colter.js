@@ -23,7 +23,7 @@ if (data.options.init) {
 }
 
 if (data.options.ls) {
-  ls(data.options.ls)
+  ls(data.options.ls === 'true' ? './' : data.options.ls)
   return
 }
 
@@ -39,7 +39,7 @@ let chalk = create_color(color)
 if (chalk == undefined) {
   console.log('please color')
   return
-} 
+}
 
 console.log("pattern: " + pattern)
 console.log("color: " + color)
