@@ -16,6 +16,11 @@ argv.option([
   type: 'string',
   description: '設定適用後のlsを試します',
   example: "'colter --ls=<path>', 'colter -l <path>'"
+}, {
+  name: 'reset',
+  type: 'bool',
+  description: '色を初期状態に戻します',
+  example: "'colter --reset'"
 }
 ])
 

@@ -7,11 +7,13 @@ const chalk_convert = require("./utility/chalk_convert")
 const convert_dircolors = require("./utility/convert_dircolors")
 const mkdotfile = require("./utility/mkdotfile")
 const print_dircolors = require("./utility/print_dircolors")
+const reset_settings = require('./utility/reset_settings')
 const create_color = require("./utility/create_color")
 const save_settings = require('./utility/save_settings')
 const get_dircolors_settings = require('./utility/get_dircolors_settings')
 const convert_JSON = require('./utility/convert_JSON')
 const ls = require('./utility/ls')
+const confirm = require('prompt-confirm');
 
 let data = opt.run()
 
@@ -24,6 +26,18 @@ if (data.options.init) {
 
 if (data.options.ls) {
   ls(data.options.ls === 'true' ? './' : data.options.ls)
+  return
+}
+
+if (data.options.reset) {
+  new confirm('reset!?')
+    .run()
+    .then((answer) => {
+      if (answer) {
+        reset_settings()
+        get_dircolors_settings()
+      }
+    })
   return
 }
 
