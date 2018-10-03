@@ -21,6 +21,16 @@ argv.option([
   type: 'bool',
   description: '色を初期状態に戻します',
   example: "'colter --reset'"
+}, {
+  name: 'bold',
+  type: 'bool',
+  description: '太字を指定します',
+  example: "'colter DIR red --bold'"
+}, {
+  name: 'italic',
+  type: 'bool',
+  description: '斜体を指定します',
+  example: "'colter DIR red --italic'"
 }
 ])
 

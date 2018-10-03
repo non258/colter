@@ -49,7 +49,7 @@ if (data.targets.length == 0) {
 let pattern = data.targets[0]
 let color = data.targets[1]
 
-let chalk = create_color(color)
+let chalk = create_color(color, data.options)
 if (chalk == undefined) {
   console.log('please color')
   return
