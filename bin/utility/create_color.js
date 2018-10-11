@@ -1,12 +1,20 @@
 const chalk = require('chalk')
-function create_color (color) {
+function create_color (color, options) {
   if (color == undefined) {
     return undefined
   }
 
+  let ch = chalk;
+  if (options.bold) {
+    ch = ch.bold;
+  }
+  if (options.italic) {
+    ch = ch.italic;
+  }
+
   let rgb = color.match(/^rgb[^a-zA-Z0-9]? *(\d+)[., ] *(\d+)[., ] *(\d+) *[^a-zA-Z]?$/)
   if (rgb) {
-    return chalk.rgb(rgb[1], rgb[2], rgb[3])
+    return ch.rgb(rgb[1], rgb[2], rgb[3])
   }
 
   let template = {
@@ -17,12 +25,12 @@ function create_color (color) {
   }
   let template_color = template[color]
   if (template_color != undefined) {
-    return chalk.rgb(template_color[0], template_color[1], template_color[2])
+    return ch.rgb(template_color[0], template_color[1], template_color[2])
   }
 
   let hex = color.match(/^#?([0-9a-f]+)$/)
   if (hex) {
-    return chalk.hex("#" + hex[1])
+    return ch.hex("#" + hex[1])
   }
 
   // more
