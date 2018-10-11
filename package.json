@@ -30,6 +30,7 @@
   "dependencies": {
     "argv": "0.0.2",
     "chalk": "2.4.1",
+    "opener": "^1.5.1",
     "prompt-confirm": "^2.0.4"
   }
 }
