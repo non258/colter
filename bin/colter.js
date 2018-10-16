@@ -21,8 +21,16 @@ let data = opt.run()
 
 
 if (data.options.config) {
+  process.stdin.on('data', chunk => {
+     if(chunk == '\n') {
+       console.log('close')
+       process.exit(0)
+     }
+  })
+
   build_server()
   open_brows(8080)
+  return
 }
 
 if (data.options.init) {
