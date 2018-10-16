@@ -14,8 +14,24 @@ const get_dircolors_settings = require('./utility/get_dircolors_settings')
 const convert_JSON = require('./utility/convert_JSON')
 const ls = require('./utility/ls')
 const confirm = require('prompt-confirm');
+const build_server = require('./utility/build_server')
+const open_brows = require('./utility/open_brows')
 
 let data = opt.run()
+
+
+if (data.options.config) {
+  process.stdin.on('data', chunk => {
+     if(chunk == '\n') {
+       console.log('close')
+       process.exit(0)
+     }
+  })
+
+  build_server()
+  open_brows(8080)
+  return
+}
 
 if (data.options.init) {
   mkdotfile();
