@@ -20,6 +20,9 @@ function build_server() {
       req.on('data', data => {
         color_data = querystring.parse(data.toString())
         console.log(color_data.req_coloer);
+
+        // TODO: 受け取った値をcolterに渡し設定ファイルを書きかえる
+        
         res.writeHead(301, {Location: '/'})
         res.end()
       })
