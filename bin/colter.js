@@ -14,6 +14,7 @@ const get_dircolors_settings = require('./utility/get_dircolors_settings')
 const convert_JSON = require('./utility/convert_JSON')
 const ls = require('./utility/ls')
 const confirm = require('prompt-confirm');
+const check_settings_init = require('./utility/check_settings_init')
 
 let data = opt.run()
 
@@ -21,6 +22,13 @@ if (data.options.init) {
   mkdotfile();
   get_dircolors_settings()
   print_dircolors()
+  return
+}
+
+if (!check_settings_init()) {
+  console.log('[38;5;197m please write the setting [0m')
+  console.log(' Using  bash or zsh, write on bashrc or zshrc:')
+  console.log('    [38;5;14m eval $(colter --init) >> test.txt [0m')
   return
 }
 
