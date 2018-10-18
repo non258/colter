@@ -22,6 +22,7 @@ function build_server() {
         console.log(color_data.req_coloer);
 
         // TODO: 受け取った値をcolterに渡し設定ファイルを書きかえる
+        //     : 別途関数を作成する
         
         res.writeHead(301, {Location: '/'})
         res.end()
