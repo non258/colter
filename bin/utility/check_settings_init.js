@@ -8,9 +8,11 @@ function check_settings_init()
   try
   {
     let dir = fs.readdirSync(`${os.homedir()}/${settings.rc}`)
+    return true
   }
   catch(e)
   {
+    console.log("errrrrr")
     return false
   }
 }
