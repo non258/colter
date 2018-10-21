@@ -12,7 +12,6 @@ function check_settings_init()
   }
   catch(e)
   {
-    console.log("errrrrr")
     return false
   }
 }
