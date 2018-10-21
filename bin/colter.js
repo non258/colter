@@ -28,7 +28,7 @@ if (data.options.init) {
 if (!check_settings_init()) {
   console.log('[38;5;197m please write the setting [0m')
   console.log(' Using  bash or zsh, write on bashrc or zshrc:')
-  console.log('    [38;5;14m eval $(colter --init) >> test.txt [0m')
+  console.log('    [38;5;14m eval $(colter --init) [0m')
   return
 }
 
