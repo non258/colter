@@ -14,8 +14,8 @@ const get_dircolors_settings = require('./utility/get_dircolors_settings')
 const convert_JSON = require('./utility/convert_JSON')
 const ls = require('./utility/ls')
 const confirm = require('prompt-confirm');
-const build_server = require('./utility/build_server')
-const open_brows = require('./utility/open_brows')
+const build_server = require('./config_browser/build_server')
+const open_brows = require('./config_browser/open_brows')
 
 let data = opt.run()
 
@@ -66,10 +66,10 @@ let pattern = data.targets[0]
 let color = data.targets[1]
 
 let chalk = create_color(color, data.options)
-if (chalk == undefined) {
-  console.log('please color')
-  return
-}
+// if (chalk == undefined) {
+//   console.log('please color')
+//   return
+// }
 
 console.log("pattern: " + pattern)
 console.log("color: " + color)
