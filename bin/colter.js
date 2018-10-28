@@ -66,10 +66,10 @@ let pattern = data.targets[0]
 let color = data.targets[1]
 
 let chalk = create_color(color, data.options)
-// if (chalk == undefined) {
-//   console.log('please color')
-//   return
-// }
+if (chalk == undefined) {
+  console.log('please color')
+  return
+}
 
 console.log("pattern: " + pattern)
 console.log("color: " + color)
