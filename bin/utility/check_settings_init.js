@@ -3,16 +3,17 @@ const fs = require('fs')
 const os = require('os')
 const settings = require('../settings')
 
-function mkdotfile()
+function check_settings_init()
 {
   try
   {
     let dir = fs.readdirSync(`${os.homedir()}/${settings.rc}`)
+    return true
   }
   catch(e)
   {
-    fs.mkdirSync(`${os.homedir()}/${settings.rc}`)
+    return false
   }
 }
 
-module.exports = mkdotfile
+module.exports = check_settings_init

@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs')
 const os = require('os')
 const settings = require('../settings')
 
@@ -6,9 +6,9 @@ const settings = require('../settings')
 function writeFile(path, data) {
   fs.writeFile(path, data, function (err) {
     if (err) {
-        throw err;
+        throw err
     }
-  });
+  })
 }
 
 function save_settings(dircolors_settings_json) {
