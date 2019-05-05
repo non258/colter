@@ -15,6 +15,7 @@ const convert_JSON = require('./utility/convert_JSON')
 const ls = require('./utility/ls')
 const confirm = require('prompt-confirm');
 const check_settings_init = require('./utility/check_settings_init')
+const messages = require('./utility/messages')
 
 let data = opt.run()
 
@@ -59,7 +60,7 @@ let color = data.targets[1]
 
 let chalk = create_color(color, data.options)
 if (chalk == undefined) {
-  console.log('please color')
+  messages.error('please color')
   return
 }
 
@@ -70,7 +71,11 @@ console.log("color: " + color)
 if (pattern) {
   let set_colors = get_dircolors_settings()
   set_colors = convert_dircolors(set_colors)
-  set_colors[pattern] = chalk_convert(chalk)
-  set_colors = convert_JSON(set_colors)
-  save_settings(set_colors)
+  if (Object.keys(set_colors).includes(pattern)) {
+    set_colors[pattern] = chalk_convert(chalk)
+    set_colors = convert_JSON(set_colors)
+    save_settings(set_colors)
+  } else {
+    messages.error('pattern is mismatch.');
+  }
 }
