@@ -22,6 +22,11 @@ argv.option([
   description: '色を初期状態に戻します',
   example: "'colter --reset'"
 }, {
+  name: 'var',
+  type: 'bool',
+  description: '色に名前を付けておきます',
+  example: "'colter --var orange fa0'"
+}, {
   name: 'bold',
   type: 'bool',
   description: '太字を指定します',
