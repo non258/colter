@@ -28,7 +28,7 @@ function create_color (color, options) {
     return ch.rgb(template_color[0], template_color[1], template_color[2])
   }
 
-  let hex = color.match(/^#?([0-9a-f]+)$/)
+  let hex = color.match(/^#?([0-9a-fA-F]+)$/)
   if (hex) {
     return ch.hex("#" + hex[1])
   }

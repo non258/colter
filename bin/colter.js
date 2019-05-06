@@ -16,6 +16,8 @@ const ls = require('./utility/ls')
 const confirm = require('prompt-confirm');
 const build_server = require('./config_browser/build_server')
 const open_brows = require('./config_browser/open_brows')
+const check_settings_init = require('./utility/check_settings_init')
+const messages = require('./utility/messages')
 
 let data = opt.run()
 
@@ -37,6 +39,13 @@ if (data.options.init) {
   mkdotfile();
   get_dircolors_settings()
   print_dircolors()
+  return
+}
+
+if (!check_settings_init()) {
+  console.log('[38;5;197m please write the setting [0m')
+  console.log(' Using  bash or zsh, write on bashrc or zshrc:')
+  console.log('    [38;5;14m eval $(colter --init) [0m')
   return
 }
 
@@ -67,7 +76,7 @@ let color = data.targets[1]
 
 let chalk = create_color(color, data.options)
 if (chalk == undefined) {
-  console.log('please color')
+  messages.error('please color')
   return
 }
 
@@ -78,7 +87,11 @@ console.log("color: " + color)
 if (pattern) {
   let set_colors = get_dircolors_settings()
   set_colors = convert_dircolors(set_colors)
-  set_colors[pattern] = chalk_convert(chalk)
-  set_colors = convert_JSON(set_colors)
-  save_settings(set_colors)
+  if (Object.keys(set_colors).includes(pattern)) {
+    set_colors[pattern] = chalk_convert(chalk)
+    set_colors = convert_JSON(set_colors)
+    save_settings(set_colors)
+  } else {
+    messages.error('pattern is mismatch.');
+  }
 }
