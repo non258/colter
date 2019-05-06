@@ -31,6 +31,10 @@ argv.option([
   type: 'bool',
   description: '斜体を指定します',
   example: "'colter DIR red --italic'"
+}, {
+  name: 'config',
+  type: 'bool',
+  description: '設定をブラウザにて行います',
 }
 ])
 
