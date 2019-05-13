@@ -15,6 +15,7 @@ const convert_JSON = require('./utility/convert_JSON')
 const ls = require('./utility/ls')
 const confirm = require('prompt-confirm');
 const check_settings_init = require('./utility/check_settings_init')
+const color_template = require('./utility/color_template')
 
 let data = opt.run()
 
@@ -60,6 +61,18 @@ let color = data.targets[1]
 let chalk = create_color(color, data.options)
 if (chalk == undefined) {
   console.log('please color')
+  return
+}
+
+if (data.options.var) {
+  let template = color_template.get()
+  template[pattern] = {
+    color: color,
+    options: {
+      bold: Boolean(data.options.bold),
+      itelic: Boolean(data.options.italic),
+    }}
+  color_template.save(template)
   return
 }
 
